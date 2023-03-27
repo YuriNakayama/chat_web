@@ -170,8 +170,5 @@ tmp
 __pycache__
 
 
-
-work/mecab-ipadic-neologd
-
 !requirements.txt
-Footer
+!vercel.json
