@@ -1,11 +1,19 @@
 {
   "version": 2,
   "name": "chat_web",
+  "build": {
+    "env": {
+      "POETRY_VERSION": "1.1.8"
+    }
+  },
   "builds": [
     {
       "src": "chat_web/src/app.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "50mb" }
+      "config": {
+        "maxLambdaSize": "50mb",
+        "installCommand": "pip install poetry && poetry install"
+      }
     }
   ],
   "routes": [{ "src": "/(.*)", "dest": "chat_web/src/app.py" }]
